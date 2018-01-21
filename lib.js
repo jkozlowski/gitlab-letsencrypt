@@ -11,7 +11,7 @@ const { URL } = require('url');
 
 const generateRsa = () => RSA.generateKeypairAsync(2048, 65537, {});
 
-const pollUntilDeployed = (url, expectedContent, timeoutMs = 30 * 1000, retries = 10) => {
+const pollUntilDeployed = (url, expectedContent, timeoutMs = 30 * 1000, retries = 20) => {
     if (retries > 0) {
         return request.get({
             url: url,
