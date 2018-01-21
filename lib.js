@@ -23,7 +23,7 @@ const pollUntilDeployed = (url, expectedContent, timeoutMs = 30 * 1000, retries 
                 // GitLab CI usually takes 50-80 seconds to build
                 console.log(`Could not find challenge file. Retrying in ${ms(timeoutMs)}...`);
                 return Promise.delay(timeoutMs).then(() =>
-                    pollUntilDeployed(url, expectedContent, timeoutMs * 2, retries - 1));
+                    pollUntilDeployed(url, expectedContent, timeoutMs, retries - 1));
             }
         });
     } else {
